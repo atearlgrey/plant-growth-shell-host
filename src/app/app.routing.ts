@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'plant-growth',
+    path: 'plant-growth-1',
     loadComponent: () => import('./plant-growth/plant-growth.component').then(m => m.PlantGrowthComponent)
   }
 ];
@@ -14,10 +14,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes, {
-      useHash: true,
-    }),
+    RouterModule.forRoot(routes),
   ],
-  exports: [],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

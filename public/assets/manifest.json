@@ -1,0 +1,12 @@
+{
+  "remotes": [
+    {
+      "path": "plant-growth",
+      "title": "Plant Growth Game",
+      "remoteBaseUrl": "http://localhost:4301",
+      "remoteEntry": "remoteEntry.js",
+      "exposedModule": "./PhaserMount",
+      "bootstrapFn": "startGame"
+    }
+  ]
+}
