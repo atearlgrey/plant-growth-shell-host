@@ -1,7 +1,7 @@
-import { Injectable, Type } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Routes } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, Type } from '@angular/core';
+import { Routes } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 
 interface Manifest {

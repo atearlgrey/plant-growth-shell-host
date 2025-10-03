@@ -1,11 +1,11 @@
 
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { APP_INITIALIZER, NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { RouterModule } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { RouterModule } from "@angular/router";
 
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TRANSLATE_HTTP_LOADER_CONFIG, TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { AppRoutingModule } from "./app.routing";

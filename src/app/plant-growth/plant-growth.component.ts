@@ -1,4 +1,3 @@
-import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

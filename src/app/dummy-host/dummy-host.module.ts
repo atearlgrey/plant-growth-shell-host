@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DummyHostComponent } from './dummy-host.component';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [CommonModule],
   declarations: [],
   exports: []
 })
-export class DummyHostModule {}
+export class DummyHostModule { }

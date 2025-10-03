@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { RemoteConfigService } from '../services/remote-config.service';
 import { Router } from '@angular/router';
-import { DummyHostComponent } from './dummy-host/dummy-host.component';
 import { LanguageService } from '../services/language.service';
+import { RemoteConfigService } from '../services/remote-config.service';
+import { DummyHostComponent } from './dummy-host/dummy-host.component';
 
 @Component({
   selector: 'app-root',

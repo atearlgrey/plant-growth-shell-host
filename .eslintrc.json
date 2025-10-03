@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "ignorePatterns": ["dist/", "node_modules/"],
+  "plugins": ["import", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "sourceType": "module"
+      },
+      "rules": {
+        "prettier/prettier": "warn",
+        "import/order": [
+          "warn",
+          {
+            "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"]],
+            "alphabetize": { "order": "asc", "caseInsensitive": true },
+            "newlines-between": "always"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -22,8 +22,8 @@ export class LanguageService {
       savedLang && this.isSupported(savedLang)
         ? savedLang
         : this.isSupported(browserLang)
-        ? browserLang
-        : this.fallbackLang;
+          ? browserLang
+          : this.fallbackLang;
 
     this.setLanguage(langToUse);
   }
