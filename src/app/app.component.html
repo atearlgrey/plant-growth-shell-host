@@ -1,10 +1,32 @@
 <!-- app.component.html -->
-<h1>{{ 'TITLE' | translate }}</h1>
-<p>{{ 'WELCOME' | translate }}</p>
-<button>{{ 'START' | translate }}</button>
-
+<!-- <div class="grid">
+  <h1>{{ 'TITLE' | translate }}</h1>
+</div>
+<div class="grid">
+  <h2>{{ 'WELCOME' | translate }}</h2>
+</div>
 <hr />
-<button (click)="switchLang('vi')">🇻🇳 Tiếng Việt</button>
-<button (click)="switchLang('en')">🇺🇸 English</button>
+<div class="grid">
+  <p-button severity="info" styleClass="mr-2">{{ 'START' | translate }}</p-button>
+  <p-button (click)="switchLang('vi')" severity="info" styleClass="mr-2">
+    <i class="pi pi-check"></i>🇻🇳 Tiếng Việt
+  </p-button>
+  <p-button (click)="switchLang('en')" severity="info">
+    <i class="pi pi-check"></i>🇺🇸 English
+  </p-button>
+</div> -->
+<div class="flex h-screen">
+  <!-- Sidebar -->
+  <div class="w-64 bg-green-500 text-white p-3">
+    <div class="text-xl font-bold mb-4 flex items-center">
+      <i class="pi pi-bolt mr-2"></i> ZenTrail
+    </div>
 
-<router-outlet></router-outlet>
+    <p-panelMenu [model]="items" styleClass="w-full"></p-panelMenu>
+  </div>
+
+  <!-- Content -->
+  <div class="flex-1 bg-gray-100">
+    <router-outlet></router-outlet>
+  </div>
+</div>

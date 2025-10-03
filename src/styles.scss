@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'primeicons/primeicons.css';
+@import 'primeflex/primeflex.css';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; // chặn scroll toàn trang
+}
+
+app-root,
+.flex.h-screen {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#phaser-container,
+canvas {
+  display: block; // loại bỏ inline-block gap
+  width: 100% !important;
+  height: 100% !important;
+}

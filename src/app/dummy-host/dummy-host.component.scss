@@ -1,0 +1,15 @@
+:host,
+#vc,
+#phaser-container {
+  width: 100%;
+  height: 100%;
+}
+
+:host {
+  display: block;
+  flex: 1;
+}
+
+canvas {
+  display: block;
+}

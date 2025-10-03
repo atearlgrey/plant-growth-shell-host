@@ -1,20 +1,20 @@
 {
   "root": true,
-  "ignorePatterns": ["dist/", "node_modules/"],
+  "ignorePatterns": ["dist/", "node_modules/", "*.html"],
   "plugins": ["import", "prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "prettier"
   ],
   "overrides": [
     {
       "files": ["*.ts"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
-        "project": ["tsconfig.json"],
-        "sourceType": "module"
+        "project": ["tsconfig.app.json"]
       },
       "rules": {
         "prettier/prettier": "warn",
@@ -22,11 +22,22 @@
           "warn",
           {
             "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"]],
-            "alphabetize": { "order": "asc", "caseInsensitive": true },
-            "newlines-between": "always"
+            "alphabetize": {"order": "asc", "caseInsensitive": true},
+            "newlines-between": "ignore"
           }
         ]
       }
     }
-  ]
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": ["tsconfig.json", "tsconfig.app.json"]
+      },
+      "node": {
+        "extensions": [".js", ".ts"]
+      }
+    }
+  }
 }

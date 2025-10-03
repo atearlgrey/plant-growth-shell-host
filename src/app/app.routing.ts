@@ -6,16 +6,17 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'plant-growth-1',
-    loadComponent: () => import('./plant-growth/plant-growth.component').then(m => m.PlantGrowthComponent)
-  }
+    loadComponent: () =>
+      import('./plant-growth/plant-growth.component').then((m) => m.PlantGrowthComponent),
+  },
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' }),
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
