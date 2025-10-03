@@ -1,1 +1,10 @@
+<!-- app.component.html -->
+<h1>{{ 'TITLE' | translate }}</h1>
+<p>{{ 'WELCOME' | translate }}</p>
+<button>{{ 'START' | translate }}</button>
+
+<hr />
+<button (click)="switchLang('vi')">🇻🇳 Tiếng Việt</button>
+<button (click)="switchLang('en')">🇺🇸 English</button>
+
 <router-outlet></router-outlet>

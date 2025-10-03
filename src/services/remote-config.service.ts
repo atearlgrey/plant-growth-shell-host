@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Routes } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { firstValueFrom } from 'rxjs';
-import { DummyHostComponent } from '../app/dummy-host/dummy-host.component';
-
 
 interface Manifest {
   remotes: RemoteManifestEntry[]
