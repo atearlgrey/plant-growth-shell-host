@@ -9,6 +9,7 @@ interface Manifest {
 }
 
 interface RemoteManifestEntry {
+  appType: string;
   path: string;
   remoteBaseUrl: string;
   remoteEntry: string;
@@ -38,6 +39,9 @@ export class RemoteConfigService {
     const routes: Routes = entries.map((entry: RemoteManifestEntry) => ({
       path: entry.path,
       component: hostComponent,
+      data: {
+        appType: entry.appType,
+      },
       resolve: {
         remote: this.remoteResolver(entry),
       },

@@ -35,19 +35,19 @@ export class DummyHostComponent implements OnInit {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private mountRemote(remote: any) {
     if (remote?.bootstrapFn) {
+      // clear old content
       this.vcr.element.nativeElement.innerHTML = '';
-
-      const el = document.createElement('div');
-      el.id = 'phaser-container';
-      el.style.width = '100%';
-      el.style.height = '100%';
-      this.vcr.element.nativeElement.appendChild(el);
       setTimeout(() => {
-        const game = remote.bootstrapFn('phaser-container');
+        const gameOrCleanup = remote.bootstrapFn(this.vcr.element.nativeElement);
+
         if (remote.destroyFn) {
           this.gameDestroyer = remote.destroyFn;
-        } else if (game?.destroy) {
-          this.gameDestroyer = () => game.destroy(true);
+        } else if (gameOrCleanup?.destroy) {
+          // trường hợp là Phaser Game instance
+          this.gameDestroyer = () => gameOrCleanup.destroy(true);
+        } else if (typeof gameOrCleanup === 'function') {
+          // trường hợp là Three.js cleanup function
+          this.gameDestroyer = gameOrCleanup;
         }
       });
     }

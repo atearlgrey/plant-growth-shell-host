@@ -1,12 +1,22 @@
 {
   "remotes": [
     {
+      "appType": "phaser",
       "path": "plant-growth",
       "title": "Plant Growth Game",
       "remoteBaseUrl": "http://localhost:4301",
       "remoteEntry": "remoteEntry.js",
       "exposedModule": "./PhaserMount",
       "bootstrapFn": "startGame"
+    },
+    {
+      "appType": "three",
+      "path": "plant-growth-three",
+      "title": "Plant Growth Game by Threejs",
+      "remoteBaseUrl": "http://localhost:4302",
+      "remoteEntry": "remoteEntry.js",
+      "exposedModule": "./ThreeMount",
+      "bootstrapFn": "startScene"
     }
   ]
 }
