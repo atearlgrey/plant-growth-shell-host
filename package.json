@@ -39,6 +39,7 @@
     "@ngx-translate/core": "^17.0.0",
     "@ngx-translate/http-loader": "^17.0.0",
     "@primeng/themes": "^20.2.0",
+    "keycloak-js": "^26.2.1",
     "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",
     "primeng": "^20.2.0",
