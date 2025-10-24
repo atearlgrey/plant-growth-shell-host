@@ -5,17 +5,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { RouterModule } from '@angular/router';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TRANSLATE_HTTP_LOADER_CONFIG, TranslateHttpLoader } from '@ngx-translate/http-loader';
-
 import Aura from '@primeng/themes/aura';
+import { TokenInterceptor } from '../interceptors/token.interceptor';
 
 import { ButtonModule } from 'primeng/button';
 import { providePrimeNG } from 'primeng/config';
 import { PanelMenuModule } from 'primeng/panelmenu';
+import { RemoteConfigService } from '../services/remote-config.service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
-import { RemoteConfigService } from '../services/remote-config.service';
 import { DummyHostModule } from './dummy-host/dummy-host.module';
 
 export function initRemoteConfig(remoteCfg: RemoteConfigService) {
@@ -62,6 +63,7 @@ export function HttpLoaderFactory(): TranslateHttpLoader {
         suffix: '.json',
       },
     },
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
